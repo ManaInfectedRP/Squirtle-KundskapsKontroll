@@ -1,7 +1,7 @@
 
 Feature-representation av filmer
 
-Ni behöver representera varje film som en "vektor".
+Vi behöver representera varje film som en "vektor".
 
 Vanliga features:
 - Genrer som one-hot encoding (t.ex. Action=1, Comedy=0, Drama=1 …).
