@@ -45,4 +45,13 @@ from PIL import Image, ImageOps
 import streamlit as st
 
 # Ladda in CSV dataset
-(csv_name) = pd.read_csv("(CSV-Name).csv")
+df = pd.read_csv("(datasetnamn).csv")
+
+# Kolla vilka data typer
+print(df.dtypes)
+
+# Kolla om det finns saknade värden
+print(df.isnull().sum())
+
+# Beskrivande Statistik
+print(df[['(colum name)', '(colum name)']].describe())
