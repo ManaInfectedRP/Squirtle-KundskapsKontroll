@@ -15,7 +15,7 @@ import openai  # optional: only used if OPENAI_API_KEY is set
 from typing import List
 
 # Konfiguration
-st.set_page_config(page_title="🎬 Filmrekommendationer med Generativ AI", layout="wide")
+st.set_page_config(page_title="Filmrekommendationer med Generativ AI", layout="wide")
 OPENAI_KEY = os.getenv("OPENAI_API_KEY", None)
 if OPENAI_KEY:
     openai.api_key = OPENAI_KEY
@@ -121,7 +121,7 @@ def compute_kmeans(coords, n_clusters=8):
 # Generativ text (AI) / fallback template
 def generate_reco_text_openai(base_title: str, rec_title: str, context_snippet: str = "") -> str:
     """
-    Genererar en rekommendationstext via OpenAI (om nyckel finns).
+    Genererar en rekommendationstext via OpenAI (om api-nyckel finns).
     Om API-nyckel saknas, kasta exception så vi kan fallback.
     """
     if not OPENAI_KEY:
@@ -331,7 +331,7 @@ with col2:
 
 # Extra: Autocomplete UI för att skriva egna rekommendationstexter
 st.markdown("---")
-st.subheader("🔤 Generera / autocompleta rekommendationstext (manuellt)")
+st.subheader("Generera / autocompleta rekommendationstext (manuellt)")
 inp_rec = st.text_input("Skriv en startfras (t.ex. 'Om du gillar Stranger Things,')", value=f"Om du gillar {selected_title},")
 btn = st.button("Generera färdig text med AI" if OPENAI_KEY else "Generera template-text")
 if btn:
